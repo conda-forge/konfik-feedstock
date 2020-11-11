@@ -14,7 +14,7 @@ build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - konfik = konfik.main:cli_entrypoint
+    - konfik = konfik:cli_entrypoint
 
 requirements:
   host:
@@ -23,10 +23,10 @@ requirements:
     - poetry-core >=1.0.0
   run:
     - python >=3.6
-    - rich >=8.0.0,<9.0.0
     - toml >=0.10.1,<0.11.0
     - python-dotenv >=0.14.0,<0.15.0
     - pyyaml >=5.3.1,<6.0.0
+    - pygments >=2.7.2,<3.0.0
 
 test:
   imports:
