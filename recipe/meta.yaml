@@ -1,5 +1,5 @@
 {% set name = "konfik" %}
-{% set version = "1.0.3" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ba85420520ce3748cbcc2c756389ba8c63e8f3f7062c1f3bc7511b2d586ff103
+  sha256: 4ffde33ee53ad089a869ef6f41059869da75e9a778f19c34d05f1f25d4ce6e1e
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - konfik = konfik.main:cli_entrypoint
+    - konfik = konfik:cli_entrypoint
 
 requirements:
   host:
@@ -27,6 +27,7 @@ requirements:
     - toml >=0.10.1,<0.11.0
     - python-dotenv >=0.14.0,<0.15.0
     - pyyaml >=5.3.1,<6.0.0
+    - pygments >=2.7.2,<3.0.0
 
 test:
   imports:
@@ -39,7 +40,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'The Strangely Familiar Config Parser'
+  summary: The Strangely Familiar Config Parser
   doc_url: https://github.com/rednafi/konfik
   dev_url: https://github.com/rednafi/konfik
 
