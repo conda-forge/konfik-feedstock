@@ -1,5 +1,5 @@
 {% set name = "konfik" %}
-{% set version = "2.0.2" %}
+{% set version = "2.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ced51afc7da47b5bca768f4c5e35338d8ed7d07b60c3b01ad2d5c8198d6134ec
+  sha256: 16b7f82fe77b0afba5ae22876fb6a9cacfae9da277bf0a1ad3b9461828c58c8e
 
 build:
   noarch: python
