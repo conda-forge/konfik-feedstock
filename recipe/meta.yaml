@@ -26,7 +26,7 @@ requirements:
     - toml >=0.10.2,<0.11.0
     - python-dotenv >=0.15.0,<0.16.0
     - pyyaml >=5.3.1,<6.0.0
-    - pygments >=2.7.2,<3.0.0
+    - pygments >=2.7.3,<3.0.0
 
 test:
   imports:
