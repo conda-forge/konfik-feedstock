@@ -6,29 +6,31 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: de16511d895df3ff541e1bf85fe64a690b3c40db302e6243a971b30fcc4dec65
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - konfik = konfik:cli_entrypoint
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - poetry-core >=1.0.0
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - toml >=0.10.2,<0.11.0
     - python-dotenv >=0.15.0,<0.16.0
     - pyyaml >=5.3.1,<6.0.0
     - pygments >=2.7.3,<3.0.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - konfik
   commands:
